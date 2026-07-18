@@ -171,7 +171,7 @@ const Quiz = () => {
   };
 
   const handleAnswerClick = (selectedOption) => {
-    // Không cho phép bấm khi đang chờ 1.5s chuyển câu
+    // Không cho phép bấm khi đang chờ chuyển câu
     if (isWaiting) return;
 
     setSelectedAnswer(selectedOption);
@@ -179,7 +179,7 @@ const Quiz = () => {
 
     const isCorrect = selectedOption === questions[currentQIndex].correctAnswer;
 
-    // Chờ 1.5 giây để xem hiệu ứng xanh/đỏ rồi mới qua câu
+    // Chờ để xem hiệu ứng xanh/đỏ rồi mới qua câu
     setTimeout(() => {
       handleNextQuestion(isCorrect);
       setIsWaiting(false);
@@ -341,16 +341,23 @@ const Quiz = () => {
       <div className={containerStyle}>
         <HeaderLogo />
         <div className="flex-1 flex flex-col items-center justify-center p-6 w-full max-w-md">
-          <h2 className="text-2xl font-light tracking-widest uppercase text-gray-300 mb-10">
+          <h2 className="text-2xl font-light tracking-widest uppercase text-gray-300 mb-6">
             Hoàn thành
           </h2>
 
-          <div className="bg-[#2a2a2a] border border-[#CA2323] rounded-2xl w-full text-center shadow-[0_15px_40px_rgba(202,35,35,0.15)] relative overflow-hidden mb-12">
+          {/* DÒNG CẢNH BÁO MỚI */}
+          <div className="w-full mb-6 py-3 px-4 bg-[#CA2323]/20 border border-[#CA2323] rounded-lg flex items-center justify-center text-center ">
+            <p className="text-[#ff5555] font-bold text-sm tracking-wide">
+              Đừng tắt trang web hoặc trình duyệt để không bị mất Phiếu Giảm Giá
+            </p>
+          </div>
+
+          <div className="bg-[#2a2a2a] border border-[#CA2323] rounded-2xl w-full text-center shadow-[0_15px_40px_rgba(202,35,35,0.15)] relative overflow-hidden mb-4">
             <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#CA2323] to-transparent opacity-70"></div>
 
             <div className="p-8">
               <p className="text-gray-400 text-xs tracking-[0.2em] uppercase mb-4">
-                Mã giảm giá của bạn
+                Phiếu giảm giá của bạn
               </p>
               <p className="text-7xl font-light text-white mb-2">
                 {totalDiscount}
@@ -381,6 +388,14 @@ const Quiz = () => {
                 Sử Dụng Khi Thanh Toán{" "}
               </p>
             </div>
+          </div>
+
+          {/* DÒNG GIẢI THÍCH MỚI */}
+          <div className="w-full text-center px-4 mt-2 mb-8">
+            <p className="text-gray-200 text-[14px] italic tracking-wide">
+              *Phiếu Giảm Giá này có thể được áp dụng cho các mặt hàng Keyrambit
+              và Aura Sword.
+            </p>
           </div>
 
           {/* <button
@@ -472,7 +487,7 @@ const Quiz = () => {
           let buttonStyle = "bg-[#CA2323] hover:bg-[#a11a1a]";
           let icon = null;
 
-          // Nếu đang trong thời gian 1.5s chờ
+          // Nếu đang trong thời gian chờ
           if (isWaiting) {
             if (option === currentQ.correctAnswer) {
               // Câu đúng sẽ luôn hiện màu xanh và icon Tick
@@ -495,7 +510,7 @@ const Quiz = () => {
                 </svg>
               );
             } else if (option === selectedAnswer) {
-              // Câu người dùng chọn sai sẽ hiện màu đỏ đạm hơn và icon X
+              // Câu người dùng chọn sai sẽ hiện màu đỏ đậm hơn và icon X
               buttonStyle =
                 "bg-red-700 shadow-[0_0_15px_rgba(220,38,38,0.6)] border border-red-400";
               icon = (
