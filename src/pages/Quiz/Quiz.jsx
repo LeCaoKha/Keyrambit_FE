@@ -46,7 +46,7 @@ const charactersData = {
     { name: "Chopper", image: Chopper },
     { name: "Beru", image: Beru },
     { name: "Groudon", image: Groudon },
-    { name: "Hancock", image: Hancock },
+    { name: "Boa Hancock", image: Hancock },
     { name: "Inosuke", image: Inosuke },
     { name: "Itachi", image: Itachi },
     { name: "Luffy", image: Luffy },
@@ -57,7 +57,7 @@ const charactersData = {
     { name: "Rengoku", image: Rengoku },
     { name: "Sakura", image: Sakura },
     { name: "Sasuke", image: Sasuke },
-    { name: "Shoto", image: Shoto },
+    { name: "Todoroki Shoto", image: Shoto },
     { name: "Tanjiro", image: Tanjiro },
     { name: "Zenitsu", image: Zenitsu },
   ],
@@ -250,7 +250,8 @@ const Quiz = () => {
                 Cách Chơi
               </p>
               <p className="text-md font-light text-gray-200">
-                Chọn đúng tên nhân vật trong khoảng thời gian quy định
+                Bạn hãy chọn đúng tên của nhân vật trong khoảng thời gian quy
+                định.
               </p>
             </div>
           </div>
@@ -345,10 +346,11 @@ const Quiz = () => {
             Hoàn thành
           </h2>
 
-          {/* DÒNG CẢNH BÁO MỚI */}
-          <div className="w-full mb-6 py-3 px-4 bg-[#CA2323]/20 border border-[#CA2323] rounded-lg flex items-center justify-center text-center ">
-            <p className="text-[#ff5555] font-bold text-sm tracking-wide">
-              Đừng tắt trang web hoặc trình duyệt để không bị mất Phiếu Giảm Giá
+          {/* DÒNG NHẮC NHỞ NHẸ NHÀNG MỚI */}
+          <div className="w-full mb-6 py-3 px-4 bg-[#2a2a2a] border border-[#555] rounded-lg flex items-center justify-center text-center shadow-sm">
+            <p className="text-gray-300 font-light text-sm tracking-wide">
+              Bạn đừng tắt trang web hoặc trình duyệt để không bị mất Phiếu Giảm
+              Giá nhé.
             </p>
           </div>
 
@@ -390,20 +392,12 @@ const Quiz = () => {
             </div>
           </div>
 
-          {/* DÒNG GIẢI THÍCH MỚI */}
           <div className="w-full text-center px-4 mt-2 mb-8">
             <p className="text-gray-200 text-[14px] italic tracking-wide">
               *Phiếu Giảm Giá này có thể được áp dụng cho các mặt hàng Keyrambit
               và Aura Sword.
             </p>
           </div>
-
-          {/* <button
-            onClick={startGame}
-            className="text-xs text-gray-500 tracking-[0.1em] uppercase hover:text-gray-300 transition-colors border-b border-transparent hover:border-gray-500 pb-1"
-          >
-            Chơi lại (Chế độ Test)
-          </button> */}
         </div>
       </div>
     );
