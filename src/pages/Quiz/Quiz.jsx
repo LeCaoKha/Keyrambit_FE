@@ -394,8 +394,8 @@ const Quiz = () => {
 
           <div className="w-full text-center px-4 mt-2 mb-8">
             <p className="text-gray-200 text-[14px] italic tracking-wide">
-              *Phiếu Giảm Giá này có thể được áp dụng cho các mặt hàng Keyrambit
-              và Aura Sword.
+              *Phiếu Giảm Giá có thể được áp dụng cho các mặt hàng Keyrambit và
+              Aura Sword.
             </p>
           </div>
         </div>
